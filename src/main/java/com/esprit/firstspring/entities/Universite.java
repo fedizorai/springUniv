@@ -1,9 +1,6 @@
 package com.esprit.firstspring.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,4 +18,8 @@ public class Universite   {
     private Long idUniversite;
     private String nomUniversite;
     private String adresse;
+
+
+    @OneToOne
+    private Foyer foyer;
 }

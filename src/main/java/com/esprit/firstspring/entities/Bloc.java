@@ -1,11 +1,10 @@
 package com.esprit.firstspring.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
         @Getter
@@ -17,4 +16,10 @@ public class Bloc {
     private Long idBloc;
     private String nomBloc;
     private Long capaciteBloc;
+
+    @ManyToOne
+    private Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+    private List<Chambre> chambres;
 }
